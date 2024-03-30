@@ -1,0 +1,98 @@
+Q1
+Create a folder name as Abhishek and aman
+- inside abhishek
+    create 4 file
+- copy any 2 file from abhishek to aman folder
+- move the 2 file from abhishek to aman folder
+
+-copy the complete abhishek folder to aman
+- now delete the abhishek folder completly
+
+
+Q2
+Create two folder name as regex and bkup
+- inside regex create 200 file
+- delete the starting 100 files
+- then remove the 101 to 105 file but with warning
+- copy the file from 106 to 150 in the backup folder
+- move the reamining content of regex to bkup
+
+Now create a tar file for all the content of bkup
+- delete the original content ( except content)
+- then check and extract it
+- and in the last delete both the folder ( regex and bkup)
+
+
+
+  539  pwd
+  540  ls
+  541  mkdir abhishek aman
+  542  ls
+  543  cd abhishek
+  544  touch file1
+  545  touch file2 file3 file4
+  546  ls
+  547  cp file1 file2 /home/khatrigarima073/aman/
+  548  ls /home/khatrigarima073/aman/
+  549  mv file3 file4 /home/khatrigarima073/aman/
+  550  ls /home/khatrigarima073/aman/
+  551  ls
+  552  cd ..
+  553  ls
+  554  cp -rv abhishek aman
+  555  ls abhishek
+  556  ls aman
+  557  rm -rv abhishek
+  558  ls aman
+  559  rm -rf *
+  560  pwd
+  561  ls
+  562  mkdir regex backup
+  563  ls
+  564  cd regex
+  565  touch -r file
+  566  touch file -r 200
+  567  touch tushar {-r..200}
+  568  ls
+  touch tushar -r {001..200}
+  570  ls
+  571  touch tusha-r {001..200}
+  572  ls
+  573  cd ..
+  574  rm -rf *
+  575  pwd
+  576  ls
+  577  mkdir regex backup
+  578  ls
+  579  cd regex
+  580  touch tushar-{001..200}
+  581  ls
+  582  rm tushar-{001..100}
+  583  ls
+  584  rm -i tushar{101..105}
+  585  rm -f tushar{101..105}
+  586  ls
+87  $ rm tushar-{101..105}
+  588  rm -i 5
+  589  rm -i {101..105}
+  590  rm -i tushar-{101..105}
+  591  ls
+  592  cp tushar-{106..150} /home/khatrigarima073/backup/
+  593  ls
+  594  ls /home/khatrigarima073/backup/
+  595  mv tushar-{151..200} /home/khatrigarima073/backup/
+  596  ls
+  597  ls /home/khatrigarima073/backup/
+  598  tar -cf isha backup
+  599  tar -cf isha
+  600  cd ..
+  601  ls
+  602  tar -cf rohit.tar backup
+  603  ls
+  604  rm -rv backup
+  605  tar -tf rohit.tar 
+  606  tar -xf rohit.tar 
+  607  ls
+  608  rm -rv backup regex rohit.tar 
+  609  ls
+  
