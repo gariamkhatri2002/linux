@@ -1,0 +1,126 @@
+Q1
+Create a file using vi editor
+- insert any 3 line
+
+"hello user tushar  user  UseR
+hey USER uSER this side
+welcome"
+
+- now cut the word "user" and paste it in the third line
+- now copy the sentence  
+"this side
+welcome"  and paste it on the forth line
+- now search every "user" word in any format and replace it with "REGEX"
+( in any format)
+
+
+Ans-
+khatrigarima073@cloudshell:~$ pwd
+/home/khatrigarima073
+khatrigarima073@cloudshell:~$ ls
+README-cloudshell.txt
+khatrigarima073@cloudshell:~$ vi regex
+khatrigarima073@cloudshell:~$ cat regex
+hello user tushar user
+hey user user this side 
+welcome
+
+khatrigarima073@cloudshell:~$ vi regex                                          
+khatrigarima073@cloudshell:~$ cat regex
+hello user tushar user
+hey user this side 
+welcome user 
+
+khatrigarima073@cloudshell:~$ vi regex                                          
+khatrigarima073@cloudshell:~$ cat regex
+hello user tushar user
+hey user this side 
+welcome user 
+
+khatrigarima073@cloudshell:~$ vi regex                                          
+khatrigarima073@cloudshell:~$ cat regex
+hello regex tushar regex
+hey regex this side 
+welcome regex 
+this side 
+welcome 
+
+
+
+Q2:
+create two folder with the name
+aman  and yash
+- in the aman folder create any 4 file
+- now copy any 2 file in the yash folder using 1 cp command
+- move the 3 file to yash folder
+- rename the 3 file into yash with a new name
+- create  a tar file of the files present in the yash folder
+- delete the original files
+- now extract the content of tar file in the current location
+- extract the content of tar file inside the /home/{user}
+( but without cp and mv command)
+
+Ans-
+  516  mkdir aman yash 
+  517  ls
+  518  cd aman/
+  519  touch abc.txt xyz.txt pqr.txt mno.txt
+  520  ls
+  521  cp abc.txt xyz.txt /home/khatrigarima073/yash/
+  522  mv xyz.txt pqr.txt mno.txt /home/khatrigarima073/yash/
+  523  ls
+  524  cd ..
+  525  cd yash/
+  526  ls
+  527  mv mno.txt apply.txt
+  528  mv pqr.txt mango.txt
+  529  mv xyz.txt orange.txt
+  530  ls
+  531  tar -cf regex.tar abc.txt apply.txt orange.txt mango.txt 
+  532  ls
+  533  tar -tf regex.tar 
+  534  rm mango.txt abc.txt apply.txt orange.txt 
+  535  ls
+  536  tar -xf regex.tar 
+  537  ls
+  538  cd ..
+  539  ls
+  540  tar -xf /home/khatrigarima073/yash/regex.tar 
+  541  ls
+
+
+
+Q Create a user name as ujjwal
+- ujjwal should have a user id name as 5000
+- ujjwal should be a part of xyz group   (  cat   /etc/group    )
+    [groupadd]
+- at the time of creating the user make sure to give the comment
+  "Regex user is created"
+- ujjwal should have a home directory
+- ujjwal account should expire in 1 day
+- ujjwal should be provided with  /bin/sh shell
+
+
+Ans-
+  523  sudo useradd -m ujjwal
+  524  sudo passwd ujjwal 
+  525  ls
+  526  su - ujjwal 
+  527  id ujjwal 
+  528  sudo usermod -u 5000 ujjwal 
+  529  id ujjwal 
+  530  sudo groupadd xyz
+  531  id ujjwal 
+  532  sudo usermod -a -G xyz ujjwal 
+  533  id ujjwal 
+  534  sudo usermod -c "regex user is created" ujjwal 
+  535  ls
+  536  id ujj
+  537  id ujjwal 
+  538  cd ..
+  539  ls
+  540  su - ujjwal 
+  541  cat ujjwal /etc/passwd
+  542  ls
+  543  sudo chage -E 2024-02-28 ujjwal 
+
